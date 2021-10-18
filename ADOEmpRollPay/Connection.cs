@@ -7,7 +7,7 @@ using System.Configuration;
 
 namespace ADOEmpRollPay
 {
-    class Connection
+    public class Connection
     {
         private SqlConnection conn;
         /// <summary>
@@ -22,12 +22,14 @@ namespace ADOEmpRollPay
         /// <summary>
         /// Method to check the database Information
         /// </summary>
-        public void DataBaseInfo()
+        public bool DataBaseInfo()
         {
+            bool flag = false;
             conn.Open();
             if (conn.State == ConnectionState.Open)
             {
                 Console.WriteLine("Database connection is succesfull & is opened !!");
+                flag = true;
             }
             else
             {
@@ -39,6 +41,7 @@ namespace ADOEmpRollPay
 
             conn.Close();
             Console.WriteLine("Connection State : " + conn.State);
+            return flag;
         }
         /// <summary>
         /// Method to get the details from Persons table
@@ -106,5 +109,6 @@ namespace ADOEmpRollPay
                 conn.Close();
             }
         }
+
     }
 }

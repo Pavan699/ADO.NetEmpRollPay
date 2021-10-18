@@ -8,10 +8,12 @@ namespace ADOEmpRollPay
         {
             Console.WriteLine("Welcome to ADO.Net Program");
             Connection connection = new Connection();
-            connection.DataBaseInfo();
+            /*connection.DataBaseInfo();
             connection.GetAllPersonsDetails();
             connection.DeleteRecordfromPersons(1);
-            connection.InsertUserDataIntoTable();
+            connection.InsertUserDataIntoTable();*/
+            LinqQuery linqQuery = new LinqQuery();
+            linqQuery.LinqTest();
         }
     }
 }
